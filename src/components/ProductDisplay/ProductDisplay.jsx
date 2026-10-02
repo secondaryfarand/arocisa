@@ -12,7 +12,7 @@ const productData = {
 };
 
 // Ganti dengan nomor WhatsApp penerima (format internasional tanpa +, contoh: 628123456789)
-const WHATSAPP_NUMBER = '628988261709';
+const WHATSAPP_NUMBER = '6289507366634';
 
 const ProductDisplay = () => {
   const [quantity, setQuantity] = useState(1);

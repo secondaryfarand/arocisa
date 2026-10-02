@@ -23,6 +23,8 @@ const Footer = () => {
           <h4>social media</h4>
           <ul>
             <li><a href="https://instagram.com">instagram</a></li>
+            <li><a href="https://maps.google.com">Jl. Gunung Rinjani No.1, Tegal Harum, Denpasar Barat, Bali 80119</a></li>
+            <li><a href="#">+62 89507366634</a></li>
             {/* <li><a href="/https://pinterest.com">pinterest</a></li> */}
           </ul>
         </div>
