@@ -6,6 +6,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 
 import Landing from './pages/Landing/Landing';
+import Products from './pages/Products/Products';
 import TiltCard from "./components/Tilt/TiltCard"; 
 
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/tilt" element={<TiltCard />} />
 
 

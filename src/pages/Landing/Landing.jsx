@@ -8,6 +8,7 @@ import FormulaVisualization from '../../components/FormulaVisualization/FormulaV
 import FeaturedProducts from '../../components/FeaturedProducts/FeaturedProducts';
 import Documentation from '../../components/Documentation/Documentation';
 import Conclusion from '../../components/Conclusion/Conclusion';
+import LogoMarquee from '../../components/LogoMarquee/LogoMarquee';
 import Footer from '../../components/Footer/Footer';
 import styles from './Landing.module.css';
 
@@ -24,6 +25,7 @@ const Landing = () => {
         <FeaturedProducts />
         <Documentation />
         <Conclusion />
+        <LogoMarquee />
       </main>
       <Footer />
     </div>

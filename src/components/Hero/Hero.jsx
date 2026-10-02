@@ -65,9 +65,9 @@ const Hero = () => {
 
       {/* Content */}
       <div className={styles.content}>
-        <span className={styles.tagline} ref={taglineRef}>
+        {/* <span className={styles.tagline} ref={taglineRef}>
           Organic & Minimalist Collection
-        </span>
+        </span> */}
         <h1 className={styles.title} ref={titleRef}>
           Innovative and Natural-Based Aromatic Inhaler
         </h1>

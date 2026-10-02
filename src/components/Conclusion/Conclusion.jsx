@@ -77,7 +77,7 @@ const Conclusion = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.badge}>EXECUTIVE SUMMARY</span>
+          {/* <span className={styles.badge}>EXECUTIVE SUMMARY</span> */}
           <h2 className={styles.title}>Conclusion & Impact</h2>
           <p className={styles.subtitle}>
             AROCISA establishes an innovative, eco-conscious shield uniting Indonesian botanical heritage with modern respiratory technology.

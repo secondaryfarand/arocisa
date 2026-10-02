@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo} onClick={closeMenu}>
-          Arocisa<span>.</span>
+          gasyor<span> arocisa.</span>
         </Link>
 
         {/* Hamburger Icon (Mobile) */}

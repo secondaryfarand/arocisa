@@ -1,0 +1,139 @@
+.section {
+  padding: 3rem 0;
+  background-color: var(--bg-primary, #FDFBF7);
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+}
+
+.label {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-muted, #8C827A);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* Container Marquee dengan Mask Gradient Edge (Fade Out Sisi) */
+.marqueeContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* Track Berjalan */
+.marqueeTrack {
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* Jarak antar logo dibuat pas */
+  width: max-content;
+  white-space: nowrap;
+  animation: marqueeScroll 30s linear infinite;
+  will-change: transform;
+}
+
+/* Pause Animasi saat Hover pada Container */
+.marqueeContainer:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+/* Base Card Logo */
+.logoCard {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+/* Default State: Hitam Putih (Grayscale) */
+.logoImg {
+  max-height: 100%;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Hover State per Logo: Berwarna Kembali & Zoom Halus */
+.logoCard:hover .logoImg {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Keyframes Pergerakan Mulus Tanpa Jeda Kosong */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Menggeser tepat setengah dari total deretan logo */
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .marqueeTrack {
+    gap: 3rem;
+    animation-duration: 25s;
+  }
+
+  .logoCard {
+    height: 50px;
+  }
+
+  .logoImg {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 2rem 0;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .marqueeTrack {
+    gap: 2rem;
+    animation-duration: 20s;
+  }
+
+  .logoCard {
+    height: 42px;
+  }
+
+  .logoImg {
+    max-width: 100px;
+  }
+}
