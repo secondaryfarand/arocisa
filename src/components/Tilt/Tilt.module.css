@@ -1,0 +1,40 @@
+abc.module.css
+.cardContainer {
+  /* Wajib ada perspective agar efek 3D terasa mendalam */
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0f172a;
+}
+
+.tiltCard {
+  width: 320px;
+  height: 420px;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  border-radius: 20px;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  
+  /* PENTING: Agar elemen di dalamnya ikut bergeser secara 3D (parallax) */
+  transform-style: preserve-3d;
+}
+
+/* Elemen di dalam card yang akan menonjol keluar (efek 3D layer) */
+.cardTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  transform: translateZ(50px); /* Membuat teks ini "maju" ke depan */
+}
+
+.cardText {
+  font-size: 1rem;
+  opacity: 0.9;
+  transform: translateZ(30px); /* Menonjol tapi sedikit di bawah judul */
+}

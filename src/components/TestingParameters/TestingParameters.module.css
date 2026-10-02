@@ -1,0 +1,92 @@
+.section {
+  max-width: 1200px;
+  margin: 3rem auto 5rem;
+  padding: 0 2rem;
+}
+
+/* Card Utama Berbentuk Kapsul Putih */
+.cardContainer {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--border-color, #E2DACF);
+  box-shadow: 0 10px 30px rgba(44, 40, 37, 0.04);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Setiap Elemen Stat */
+.statItem {
+  flex: 1;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Angka / Nilai Utama (Meniru Warna & Bobot Gambar 2) */
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 800;
+  /* Menggunakan --primary dengan fallback hijau forest */
+  color: var(--primary, var(--primary-green, #4A5D4E));
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* Judul Parameter */
+.statTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main, #2C2825);
+  margin: 0 0 0.25rem 0;
+}
+
+/* Deskripsi Tambahan Halus */
+.statDescription {
+  font-size: 0.82rem;
+  /* Menggunakan --secondary dengan fallback cokelat soft */
+  color: var(--secondary, var(--text-muted, #6E665E));
+  display: block;
+}
+
+/* Garis Pemisah Vertikal */
+.divider {
+  width: 1px;
+  height: 60px;
+  background-color: var(--border-color, #E2DACF);
+  flex-shrink: 0;
+}
+
+/* Responsif untuk Tablet & Smartphone */
+@media (max-width: 992px) {
+  .statValue {
+    font-size: 1.4rem;
+  }
+  
+  .statTitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .divider {
+    width: 80%;
+    height: 1px; /* Berubah jadi garis horisontal di mobile */
+    margin: 0.2rem 0;
+  }
+
+  .statItem {
+    padding: 0.5rem 0;
+  }
+
+  .statValue {
+    font-size: 1.6rem;
+  }
+}

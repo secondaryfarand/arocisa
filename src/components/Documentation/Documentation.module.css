@@ -1,0 +1,289 @@
+.section {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-primary, #FDFBF7);
+  color: var(--text-main, #2C2825);
+}
+
+.container {
+  max-width: 1200px; /* Diperlebar sedikit agar galeri tampil lebih megah */
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem auto;
+}
+
+.title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--text-main, #2C2825);
+  margin-bottom: 0.6rem;
+}
+
+.subtitle {
+  color: var(--text-muted, #6E665E);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Symmetric 3-Column Grid (Portrait - Landscape/Landscape - Portrait) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr; /* Kolom tengah lebih lebar untuk foto Landscape */
+  grid-template-rows: repeat(2, 260px);
+  gap: 1.25rem;
+}
+
+.gridItem {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--bg-secondary, #F4EFEA);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gridItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* Posisi Spesifik Setiap Card */
+.portraitLeft {
+  grid-column: 1;
+  grid-row: 1 / span 2; /* Portrait Kiri */
+}
+
+.landscapeTop {
+  grid-column: 2;
+  grid-row: 1; /* Landscape Atas */
+}
+
+.landscapeBottom {
+  grid-column: 2;
+  grid-row: 2; /* Landscape Bawah */
+}
+
+.portraitRight {
+  grid-column: 3;
+  grid-row: 1 / span 2; /* Portrait Kanan */
+}
+
+/* Image Wrapper */
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gridItem:hover .image {
+  transform: scale(1.06);
+}
+
+/* Overlay Hover */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(25, 30, 26, 0.85) 0%,
+    rgba(25, 30, 26, 0.15) 60%,
+    transparent 100%
+  );
+  opacity: 0;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  transition: opacity 0.35s ease;
+}
+
+.gridItem:hover .overlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  color: #ffffff;
+  max-width: 80%;
+}
+
+.category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #D4B28C;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.imgTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #ffffff;
+}
+
+.zoomBtn {
+  width: 42px;
+  height: 42px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.gridItem:hover .zoomBtn {
+  background-color: var(--primary-green, #4A5D4E);
+  transform: scale(1.08);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background-color: #1A1D1A;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.lightboxImg {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background-color: #0d0f0d;
+  display: block;
+}
+
+.lightboxCaption {
+  padding: 1.25rem 1.75rem;
+  background-color: #1A1D1A;
+  color: #ffffff;
+}
+
+.lightboxCategory {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #D4B28C;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.lightboxTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Responsif Tablet & Mobile */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .portraitLeft,
+  .portraitRight,
+  .landscapeTop,
+  .landscapeBottom {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 3.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .portraitLeft,
+  .portraitRight,
+  .landscapeTop,
+  .landscapeBottom {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 280px;
+  }
+
+  .overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      transparent 75%
+    );
+  }
+
+  .zoomBtn {
+    display: none;
+  }
+
+  .lightbox {
+    padding: 1rem;
+  }
+}
