@@ -14,7 +14,9 @@ const Footer = () => {
           <ul>
             <li><a href="/">home</a></li>
             <li><a href="/products">products</a></li>
-            <li><a href="/about">our story</a></li>
+            <li><a href="/methodology">methodology</a></li>
+            <li><a href="/team">our team</a></li>
+            <li><a href="/poster">our poster</a></li>
           </ul>
         </div>
         <div className={styles.socials}>

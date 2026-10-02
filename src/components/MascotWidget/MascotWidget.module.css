@@ -1,0 +1,126 @@
+/* Container Mengambang untuk Maskot */
+.mascotContainer {
+  position: absolute;
+  /* top: 10%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  user-select: none;
+}
+
+/* Penempatan Maskot Kiri & Kanan */
+.mascotLeft {
+  left: 200px;
+  top: 310%;
+  animation: floatAndSwayLeft 5s ease-in-out infinite;
+  /* transform: translateY(100rem); */
+}
+
+.mascotRight {
+  right: 200px;
+  animation: floatAndSwayRight 6s ease-in-out infinite;
+}
+
+/* Wrapper Gambar & Efek Hover */
+.imageWrapper {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.imageWrapper:hover {
+  transform: scale(1.12) rotate(3deg);
+}
+
+.imageWrapper:active {
+  transform: scale(0.95);
+}
+
+/* Gambar Maskot */
+.mascotImg {
+  width: 130px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(122, 92, 67, 0.15));
+}
+
+/* Tooltip Keterangan di Bawah Gambar */
+.hintTooltip {
+  margin-top: 0.6rem;
+  background-color: #FFFFFF;
+  border: 1px solid #EAE4DC;
+  color: #7A5C43;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(44, 40, 37, 0.08);
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.imageWrapper:hover + .hintTooltip {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Keyframes Animasi Melayang + Bergeser (Left) */
+@keyframes floatAndSwayLeft {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) translateX(8px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-18px) translateX(-4px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-8px) translateX(6px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+/* Keyframes Animasi Melayang + Bergeser (Right) */
+@keyframes floatAndSwayRight {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-14px) translateX(-8px) rotate(-2deg);
+  }
+  60% {
+    transform: translateY(-6px) translateX(6px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+/* Responsive Layar HP */
+@media (max-width: 768px) {
+  .mascotImg {
+    width: 85px;
+  }
+
+  .mascotLeft {
+    left: 10px;
+    top: 280%;
+  }
+
+  .mascotRight {
+    right: 10px;
+    top: 600%;
+  }
+
+  .hintTooltip {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+}

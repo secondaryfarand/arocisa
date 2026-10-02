@@ -49,22 +49,31 @@ const Navbar = () => {
           </li>
           <li className={styles.navItem}>
             <NavLink 
-              to="/about" 
+              to="/methodology" 
+              className={({ isActive }) => isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink}
+              onClick={closeMenu}
+            >
+              Methodology
+            </NavLink>
+          </li>
+          <li className={styles.navItem}>
+            <NavLink 
+              to="/team" 
               className={({ isActive }) => isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink}
               onClick={closeMenu}
             >
               Our Team
             </NavLink>
           </li>
-          {/* <li className={styles.navItem}>
+          <li className={styles.navItem}>
             <NavLink 
-              to="/contact" 
+              to="/poster" 
               className={({ isActive }) => isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink}
               onClick={closeMenu}
             >
-              Contact
+              Our Poster
             </NavLink>
-          </li> */}
+          </li>
         </ul>
       </div>
     </nav>

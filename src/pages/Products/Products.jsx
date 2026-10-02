@@ -10,7 +10,7 @@ const Products = () => {
       <Navbar />
 
       {/* 2. Main Product Content */}
-      <main style={{ paddingTop: '5rem' }}>
+      <main style={{ paddingTop: '1rem' }}>
         <ProductDisplay />
       </main>
 

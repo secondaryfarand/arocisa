@@ -7,6 +7,9 @@ import viteLogo from './assets/vite.svg'
 
 import Landing from './pages/Landing/Landing';
 import Products from './pages/Products/Products';
+import Methodology from './pages/Methodology/Methodology';
+import Team from './pages/Team/Team';
+import Poster from './pages/Poster/Poster';
 import TiltCard from "./components/Tilt/TiltCard"; 
 
 import './App.css'
@@ -18,6 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/methodology" element={<Methodology />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/poster" element={<Poster />} />
         <Route path="/tilt" element={<TiltCard />} />
 
 

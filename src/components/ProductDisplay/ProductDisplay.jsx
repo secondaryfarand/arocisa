@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import styles from './ProductDisplay.module.css';
 
 const productData = {
-  name: 'AROCISA Aromatherapy Inhaler',
-  category: 'Innovative Aromatherapy',
+  name: 'AROCISA by gasyor',
+  category: 'INHALER',
   unitPrice: 12000,
-  tagline: 'Natural Relief & Mental Clarity in Every Breath',
+  tagline: 'Innovative and Natural-Based Aromatic Inhaler.',
   imgLandscape: '/assets/products/product-landscape.jpeg',
-  imgPortrait: '/assets/products/product-portrait.jpeg',
+  imgPortrait: '/assets/products/product-potrait.jpeg',
 };
 
 // Ganti dengan nomor WhatsApp penerima (format internasional tanpa +, contoh: 628123456789)
@@ -42,7 +42,7 @@ const ProductDisplay = () => {
   // Handler Klik Order ke WhatsApp
   const handleWhatsAppOrder = () => {
     const message = 
-      `Hello AROCISA GASYOR Visitor Team! 👋\n\n` +
+      `Hello AROCISA GASYOR Team! 👋\n\n` +
       `I would like to order the following product:\n` +
       `• Product: *${productData.name}*\n` +
       `• Quantity: *${quantity} item(s)*\n` +
@@ -176,13 +176,32 @@ const ProductDisplay = () => {
         <h2 className={styles.detailsTitle}>Product Overview & Innovation</h2>
         <div className={styles.paragraphGroup}>
           <p>
-            The AROCISA Aromatherapy Inhaler is an innovative wellness breakthrough designed to provide instant freshness and natural relaxation amidst busy daily routines. Combining high-quality natural botanical extracts with modern ergonomic inhaler technology, this product is formulated to relieve nasal congestion, reduce stress levels, and restore mental focus without synthetic side effects.
+            Air pollution is an environmental problem that requires serious attention. According to IQAir data
+            (World Air Quality Report 2025), Indonesia ranked first among Southeast Asian countries in terms of air
+            pollution. One of the major sources of air pollution in our immediate environment is road traffic, particularly
+            motor-vehicle emissions. In urban areas, vehicle emissions account for approximately 60–70% of potential
+            pollutants, including NO2, CO, PM10, and PM2.5. This situation is particularly relevant to Denpasar City,
+            the capital of Bali Province. The increasing population of Denpasar City, driven by economic development,
+            has contributed to a growing number of motor vehicles used by the community. The increase in motor
+            vehicle numbers consequently generates higher pollutant emissions. In 2026, Denpasar City was included
+            among the ten areas in Indonesia with the poorest air-quality conditions (Detikbali, 2026).
           </p>
           <p>
-            The core strength of AROCISA lies in its long-lasting, stable aromatherapy formulation and convenient portability. With its compact, eco-friendly design, it serves as a practical health solution for professionals, students, and active individuals needing a quick boost of mental clarity. Every component is manufactured under strict hygienic standards to ensure optimal aroma diffusion and effectiveness.
+            Dependence on motor vehicles not only contributes to increased air pollution and declining urban
+            air quality, but may also reduce physical activity, ultimately affecting public health (Patz et al., 2014),
+            including through Acute Respiratory Infections (ARI). Indonesia is rich in local spices, such as Cinnamon (Cinnamomum burmannii), which contains
+            cinnamaldehyde, flavonoids, and eugenol with antioxidant and antimicrobial properties; Clove (Syzygium
+            aromaticum), which contains eugenol, flavonoids, and tannins with anti-inflammatory, antibacterial, and
+            expectorant properties; and Sappan Wood (Caesalpinia sappan), which contains active compounds such as
+            brazilin, flavonoids, tannins, and essential oils with antibacterial and anti-inflammatory properties.
           </p>
           <p>
-            Driven by continuous research and innovation, AROCISA represents a sustainable approach to modern personal care. Free from harmful chemicals, it is completely safe for regular everyday use. Recognized and showcased at international innovation competitions, AROCISA reflects our dedication to bringing world-class, locally crafted aromatherapy products to the global stage.
+            These three local spices may help alleviate symptoms associated with Acute Respiratory Infections
+            (ARI). Their potential may be utilized to reduce inflammation, combat microorganisms associated with
+            infection, and support the body’s defenses during ARI. Based on this potential, AROCISA was developed
+            as a practical, easy-to-use aromatic inhaler based on local spices to help relieve respiratory discomfort. The
+            development of AROCISA is aligned with SDG 3 through efforts to support health and well-being, as well
+            as SDG 13 through the sustainable and environmentally responsible utilization of local biodiversity
           </p>
         </div>
       </motion.div>

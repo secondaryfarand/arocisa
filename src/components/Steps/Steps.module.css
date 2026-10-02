@@ -1,0 +1,278 @@
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  position: relative;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: var(--text-main, #2C2825);
+  font-weight: 700;
+  margin: 0 0 0.8rem 0;
+}
+
+.subtitle {
+  color: var(--text-muted, #6E665E);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* -----------------------------------
+   1. DESKTOP TIMELINE (VERTIKAL)
+----------------------------------- */
+.desktopTimeline {
+  position: relative;
+  padding: 1rem 0;
+  display: block;
+}
+
+.centerLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, #D8CECE 0%, var(--primary-brown, #7A5C43) 50%, #D8CECE 100%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.stepRow {
+  position: relative;
+  display: flex;
+  width: 100%;
+  z-index: 2;
+}
+
+.rowLeft {
+  justify-content: flex-start;
+}
+
+.rowRight {
+  justify-content: flex-end;
+}
+
+.rowLeft .card, .rowRight .card {
+  width: 44%;
+}
+
+.timelineNode {
+  position: absolute;
+  left: 50%;
+  top: 1.8rem;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--primary-brown, #7A5C43);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 4px #F5F1EC;
+  z-index: 3;
+}
+
+/* Card Style */
+.card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border-color, #EAE4DC);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(122, 92, 67, 0.12);
+}
+
+.imageBox {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: #F5F1EC;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.stepBadge {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background-color: rgba(44, 40, 37, 0.75);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  letter-spacing: 1px;
+}
+
+.cardBody {
+  padding: 1.4rem;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.stepTitle {
+  font-size: 1.15rem;
+  color: var(--text-main, #2C2825);
+  font-weight: 700;
+  margin: 0;
+}
+
+.icon {
+  color: var(--primary-brown, #7A5C43);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.stepDescription {
+  font-size: 0.92rem;
+  color: var(--text-muted, #5A534C);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* -----------------------------------
+   2. MOBILE & TABLET TIMELINE (HORIZONTAL SLIDER)
+----------------------------------- */
+.mobileTimeline {
+  display: none;
+}
+
+.scrollContainer {
+  position: relative;
+  overflow-x: auto;
+  padding: 2.5rem 0 1rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-brown, #7A5C43) #F5F1EC;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: #F5F1EC;
+  border-radius: 10px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: var(--primary-brown, #7A5C43);
+  border-radius: 10px;
+}
+
+/* Garis Horizontal Timeline */
+.horizontalLine {
+  position: absolute;
+  top: -0.65rem; /* Disesuaikan dengan posisi tengah lingkaran */
+  left: 3.5rem;   /* Dimulai dari tengah kartu pertama */
+  right: 3.5rem;  /* Berakhir di tengah kartu terakhir */
+  height: 2px;
+  background-color: var(--primary-brown, #7A5C43);
+  z-index: 1;
+}
+
+.sliderTrack {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1.5rem; /* Memberikan ruang di ujung kiri & kanan */
+  width: max-content;
+}
+
+.mobileCardItem {
+  position: relative;
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.mobileNode {
+  position: absolute;
+  top: -2.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--primary-brown, #7A5C43);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  /* Disesuaikan tanpa shadow putih yang menutupi garis kasar */
+  border: 3px solid #FAF7F2; /* Sesuaikan dengan warna background halaman utama */
+  z-index: 3;
+}
+
+.swipeHint {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted, #8C827A);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* -----------------------------------
+   RESPONSIVE BREAKPOINTS
+----------------------------------- */
+@media (max-width: 900px) {
+  .desktopTimeline {
+    display: none; /* Sembunyikan versi vertikal */
+  }
+
+  .mobileTimeline {
+    display: block; /* Tampilkan versi slider horizontal */
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}

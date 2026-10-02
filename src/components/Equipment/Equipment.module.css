@@ -1,0 +1,141 @@
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: var(--text-main, #2C2825);
+  font-weight: 700;
+  margin: 0 0 0.8rem 0;
+}
+
+.subtitle {
+  color: var(--text-muted, #6E665E);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Grid Layout untuk 7 Items */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+/* Equipment Card */
+.card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border-color, #EAE4DC);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: #D8CECE;
+  box-shadow: 0 12px 30px rgba(122, 92, 67, 0.12);
+}
+
+/* Image Container */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #F5F1EC;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.06);
+}
+
+/* Number Index Tag (Minimalis di Sudut Kanan Atas Gambar) */
+.numberTag {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background-color: rgba(44, 40, 37, 0.75);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  letter-spacing: 1px;
+}
+
+/* Card Body */
+.cardBody {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  color: var(--text-main, #2C2825);
+  font-weight: 700;
+  margin: 0;
+}
+
+.icon {
+  color: var(--primary-brown, #7A5C43);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  color: var(--text-muted, #5A534C);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .imageContainer {
+    height: 160px;
+  }
+}

@@ -1,0 +1,208 @@
+/* Container Utama Halaman */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #FAF7F2;
+  color: #2C2825;
+}
+
+/* Area Konten Utama */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem 4rem 1.5rem;
+}
+
+/* -----------------------------------
+   HEADER TITLE SECTION
+----------------------------------- */
+.headerGroup {
+  text-align: center;
+  margin-bottom: 2.2rem;
+  max-width: 600px;
+}
+
+.pageTitle {
+  font-size: 2.4rem;
+  color: var(--text-main, #2C2825);
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+}
+
+.pageSubtitle {
+  font-size: 1rem;
+  color: var(--text-muted, #6E665E);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* -----------------------------------
+   POSTER PREVIEW CARD
+----------------------------------- */
+.posterWrapper {
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #EAE4DC;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(44, 40, 37, 0.05);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.posterWrapper:hover {
+  transform: translateY(-6px) scale(1.005);
+  box-shadow: 0 18px 36px rgba(122, 92, 67, 0.12);
+}
+
+.posterImage {
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.posterWrapper:hover .posterImage {
+  transform: scale(1.015);
+}
+
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44, 40, 37, 0.65), transparent 55%);
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1.8rem;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.posterWrapper:hover .hoverOverlay {
+  opacity: 1;
+}
+
+.hoverBadge {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid #EAE4DC;
+  color: var(--primary-brown, #7A5C43);
+  padding: 0.55rem 1.4rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.posterWrapper:hover .hoverBadge {
+  transform: translateY(0);
+}
+
+/* -----------------------------------
+   FULLSCREEN MODAL OVERLAY
+----------------------------------- */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999; /* Ditingkatkan agar menutup Navbar */
+  background-color: rgba(44, 40, 37, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: zoom-out;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+
+.modalContent {
+  position: relative;
+  max-width: 95vw;
+  max-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fullPosterImage {
+  max-width: 95vw;
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10000; /* Ditingkatkan di atas modal content */
+}
+
+.closeButton:hover {
+  background: var(--primary-brown, #7A5C43);
+  color: #FFFFFF;
+  transform: scale(1.08);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mainContent {
+    padding-top: 5.5rem;
+  }
+
+  .pageTitle {
+    font-size: 1.9rem;
+  }
+
+  .pageSubtitle {
+    font-size: 0.9rem;
+  }
+}
