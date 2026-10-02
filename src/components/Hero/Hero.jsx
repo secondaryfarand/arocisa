@@ -78,8 +78,8 @@ const Hero = () => {
           <Link to="/products" className={styles.btnPrimary}>
             Explore Products
           </Link>
-          <Link to="/about" className={styles.btnSecondary}>
-            Our Story
+          <Link to="/team" className={styles.btnSecondary}>
+            Our Team
           </Link>
         </div>
       </div>
